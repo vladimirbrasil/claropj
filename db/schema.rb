@@ -11,6 +11,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130210003639) do
+
+  create_table "despesas", :force => true do |t|
+    t.string   "numero"
+    t.string   "tipo"
+    t.string   "data"
+    t.string   "hora"
+    t.string   "origem"
+    t.string   "numero_destino"
+    t.string   "duracao"
+    t.string   "tarifa"
+    t.string   "valor"
+    t.string   "valor_cobrado"
+    t.string   "nome"
+    t.string   "cc"
+    t.string   "matricula"
+    t.string   "descricao"
+    t.string   "tipo_imposto"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "linhas", :force => true do |t|
+    t.string   "numero"
+    t.string   "proprietario"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "proprietarios", :force => true do |t|
+    t.string   "nome"
+    t.string   "email"
+    t.text     "obs"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
